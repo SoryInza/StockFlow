@@ -28,6 +28,28 @@ class Command(BaseCommand):
         LigneCommande.objects.all().delete()
         Commande.objects.all().delete()
         Produit.objects.all().delete()
+        Boutique.objects.all().delete()
+        
+        # CREATION BOUTIQUES
+
+        self.stdout.write(
+            self.style.SUCCESS(
+                'Création boutiques...'
+            )
+        )
+
+        boutiques = []
+
+        for i in range(3):
+
+            boutique = Boutique.objects.create(
+
+                nom=f'Boutique {i+1}',
+            )
+
+            boutiques.append(
+                boutique
+            )
 
         categories = [
             'Alimentaire',
