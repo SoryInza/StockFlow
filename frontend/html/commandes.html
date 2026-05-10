@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Commandes</title>
+
+    <link
+        rel="stylesheet"
+        href="../static/css/commandes.css"
+    >
+     <link
+        rel="stylesheet"
+        href="../static/css/global.css"
+    >
+
+
+</head>
+
+<body>
+
+    <header>
+
+        <div id="navbar"></div>
+
+        <button id="openModalBtn">
+            + Nouvelle Commande
+        </button>
+
+    </header>
+
+    <!-- FILTRE -->
+
+    <section class="filters">
+
+        <select id="statutFilter">
+
+            <option value="">
+                Tous statuts
+            </option>
+
+            <option value="en_attente">
+                En attente
+            </option>
+
+            <option value="confirmee">
+                Confirmée
+            </option>
+
+            <option value="livree">
+                Livrée
+            </option>
+
+            <option value="annulee">
+                Annulée
+            </option>
+
+        </select>
+
+    </section>
+
+    <!-- TABLE -->
+
+    <section class="table-section">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Fournisseur</th>
+
+                    <th>Date prévue</th>
+
+                    <th>Statut</th>
+
+                    <th>Nb produits</th>
+
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="commandesTable">
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+    <!-- MODAL -->
+
+    <div class="modal" id="modal">
+
+        <div class="modal-content">
+
+            <h2>Nouvelle Commande</h2>
+
+            <form id="commandeForm">
+
+                <input
+                    type="text"
+                    id="fournisseurNom"
+                    placeholder="Nom fournisseur"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="fournisseurContact"
+                    placeholder="Contact fournisseur"
+                    required
+                >
+
+                <input
+                    type="date"
+                    id="dateLivraison"
+                    required
+                >
+
+                <div id="lignesContainer">
+
+                </div>
+
+                <button
+                    type="button"
+                    id="addLigneBtn"
+                >
+                    + Ajouter Ligne
+                </button>
+
+                <button type="submit">
+                    Créer Commande
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="../static/js/composants/navbar.js"></script>
+    <script src="../static/js/commandes.js"></script>
+    <script>
+        document.getElementById(
+    "navbar"
+).innerHTML =
+renderNavbar('commandes')
+    </script>
+
+</body>
+
+</html>
