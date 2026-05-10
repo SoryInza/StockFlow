@@ -2,6 +2,8 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
+from django.conf import settings
+
 from .models import Produit
 from .serializers import ProduitSerializer
 
@@ -33,8 +35,14 @@ def produits(request):
         return Response(serializer.data)
 
     elif request.method == 'POST':
-
         serializer = ProduitSerializer(data=request.data)
+
+        if request.data.get('sku')[:3] != settings.SKU:
+            if serializer.is_valid():
+                return Response(
+                    serializer.data,
+                    status=status.HTTP_400_BAD_REQUEST
+                )
 
         if serializer.is_valid():
             serializer.save()

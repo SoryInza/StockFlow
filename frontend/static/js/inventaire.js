@@ -323,7 +323,7 @@ produitForm.addEventListener(
         if(response.status === 400){
 
             alert(
-                "Erreur formulaire"
+                "Veuillez vérifier les donnés du formulaire, peut etre le SKU qui doit commencer par les trois premiere lettre de votre prénom!"
             )
 
             return
