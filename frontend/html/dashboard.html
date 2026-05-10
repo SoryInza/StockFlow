@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="../static/css/dashboard.css"
+    >
+    <link
+        rel="stylesheet"
+        href="../static/css/global.css"
+    >
+
+</head>
+
+<body>
+
+    <header>
+
+        <div id="navbar"></div>
+
+        <div class="top-actions">
+
+            <select id="boutiqueSelect">
+
+                <option value="1">
+                    Boutique 1
+                </option>
+
+                <option value="2">
+                    Boutique 2
+                </option>
+
+            </select>
+
+            <button id="refreshBtn">
+                Rafraîchir
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- STATISTIQUES -->
+
+    <section class="stats">
+
+        <div class="card">
+
+            <h3>Total Produits</h3>
+
+            <p id="totalProduits">0</p>
+
+        </div>
+
+        <div class="card alert">
+
+            <h3>En Alerte</h3>
+
+            <p id="produitsAlerte">0</p>
+
+        </div>
+
+        <div class="card rupture">
+
+            <h3>En Rupture</h3>
+
+            <p id="produitsRupture">0</p>
+
+        </div>
+
+        <div class="card valeur">
+
+            <h3>Valeur Stock</h3>
+
+            <p id="valeurStock">0 FCFA</p>
+
+        </div>
+
+    </section>
+
+    <!-- ALERTES -->
+
+    <section class="section">
+
+        <div class="section-title">
+
+            <h2>Alertes Critiques</h2>
+
+        </div>
+
+        <div id="alertesContainer">
+
+        </div>
+
+    </section>
+
+    <!-- COMMANDES -->
+
+    <section class="section">
+
+        <div class="section-title">
+
+            <h2>Commandes</h2>
+
+        </div>
+
+        <div class="commande-resume">
+
+            <div class="commande-box">
+
+                <span>
+                    En attente
+                </span>
+
+                <strong id="cmdAttente">
+                    0
+                </strong>
+
+            </div>
+
+            <div class="commande-box retard">
+
+                <span>
+                    En retard
+                </span>
+
+                <strong id="cmdRetard">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- COMMANDES RECENTES -->
+
+    <section class="section">
+
+        <div class="section-title">
+
+            <h2>Dernières commandes</h2>
+
+        </div>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Fournisseur</th>
+
+                    <th>Statut</th>
+
+                    <th>Date</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="commandesTable">
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+    <script src="../static/js/composants/navbar.js"></script>
+    <script src="../static/js/dashboard.js"></script>
+    <script>
+        document.getElementById(
+    "navbar"
+).innerHTML =
+renderNavbar('dashboard')
+    </script>
+
+</body>
+
+</html>
