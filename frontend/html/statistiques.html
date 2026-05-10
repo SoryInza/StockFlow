@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Statistiques</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="../static/css/statistiques.css">
+    <link rel="stylesheet" href="../static/css/global.css">
+
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+    <div class="container">
+
+        <h1>
+            Statistiques
+        </h1>
+
+        <!-- CARDS -->
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>
+                    Total Stock
+                </h3>
+
+                <p id="totalStock">
+                    0
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                    Valeur Totale
+                </h3>
+                <p id="valeurTotale">
+                    0
+                </p>
+
+            </div>
+
+            <div class="card alert">
+
+                <h3>
+                    Produits Alertes
+                </h3>
+
+                <p id="produitsAlertes">
+                    0
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- CHARTS -->
+
+        <div class="charts">
+
+            <div class="chart-box">
+
+                <h2>
+                    Produits par catégorie
+                </h2>
+
+                <canvas id="categorieChart"></canvas>
+
+            </div>
+            <div class="chart-box">
+
+                <h2>
+                    Commandes
+                </h2>
+
+                <canvas id="commandeChart"></canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../static/js/composants/navbar.js"></script>
+    <script src="../static/js/statistiques.js"></script>
+    <script>
+        document.getElementById(
+            "navbar"
+        ).innerHTML =
+            renderNavbar('statistiques')
+    </script>
+
+
+</body>
+
+</html>
