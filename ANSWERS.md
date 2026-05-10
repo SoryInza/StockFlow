@@ -1,5 +1,7 @@
 # ANSWERS.md
 
+![Analyse du code](images/image_bug.jpeg)
+
 ## 1 — Injection SQL (ligne 7)
 
 La requête SQL est construite avec de la concaténation de chaînes.  
