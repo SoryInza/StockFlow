@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Inventaire</title>
+
+    <link
+        rel="stylesheet"
+        href="../static/css/inventaire.css"
+    >
+    <link
+        rel="stylesheet"
+        href="../static/css/global.css"
+    >
+
+</head>
+
+<body>
+
+    <header>
+        <div id="navbar"></div>
+
+        <button id="openModalBtn">
+            + Ajouter Produit
+        </button>
+
+    </header>
+
+    <!-- FILTRES -->
+
+    <section class="filters">
+
+        <select id="categorieFilter">
+
+            <option value="">
+                Toutes catégories
+            </option>
+
+            <option value="Alimentaire">
+                Alimentaire
+            </option>
+
+            <option value="Boissons">
+                Boissons
+            </option>
+
+            <option value="Hygiène">
+                Hygiène
+            </option>
+
+        </select>
+
+        <select id="statutFilter">
+
+            <option value="">
+                Tous statuts
+            </option>
+
+            <option value="ok">
+                OK
+            </option>
+
+            <option value="alerte">
+                Alerte
+            </option>
+
+            <option value="rupture">
+                Rupture
+            </option>
+
+        </select>
+
+    </section>
+
+    <!-- TABLE -->
+
+    <section class="table-section">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Nom</th>
+
+                    <th>SKU</th>
+
+                    <th>Catégorie</th>
+
+                    <th>Quantité</th>
+
+                    <th>Seuil</th>
+
+                    <th>Prix</th>
+
+                    <th>Statut</th>
+
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="produitsTable">
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+    <!-- MODAL -->
+
+    <div class="modal" id="modal">
+
+        <div class="modal-content">
+
+            <h2>Ajouter Produit</h2>
+
+            <form id="produitForm">
+
+                <input
+                    type="text"
+                    id="nom"
+                    placeholder="Nom"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="sku"
+                    placeholder="SKU"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="categorie"
+                    placeholder="Catégorie"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="prix"
+                    placeholder="Prix"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="stock"
+                    placeholder="Stock"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="seuil"
+                    placeholder="Seuil"
+                    required
+                >
+
+                <button type="submit">
+                    Ajouter
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="../static/js/composants/navbar.js"></script>
+    <script src="../static/js/inventaire.js"></script>
+    <script>
+        document.getElementById(
+    "navbar"
+).innerHTML =
+renderNavbar('inventaire')
+    </script>
+
+</body>
+
+</html>

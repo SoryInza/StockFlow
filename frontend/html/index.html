@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>StockFlow</title>
+
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link
+        rel="stylesheet"
+        href="../static/css/global.css"
+    >
+</head>
+<body>
+    <header>
+        <div id="navbar"></div>
+    </header>
+
+    <h1>Gestion Inventaire</h1>
+
+    <button onclick="chargerProduits()">
+        Charger Produits
+    </button>
+
+    <div id="liste-produits"></div>
+
+    <script src="../composants/navbar.js"></script>
+    <script src="../static/js/index.js"></script>
+    <script>
+        document.getElementById(
+    "navbar"
+).innerHTML =
+renderNavbar('index')
+    </script>
+
+</body>
+</html>
