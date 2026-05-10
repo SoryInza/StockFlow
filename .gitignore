@@ -3,6 +3,8 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+db.sqlite3
+
 # C extensions
 *.so
 
@@ -148,6 +150,7 @@ activemq-data/
 *.sage.py
 
 # Environments
+myenv
 .env
 .envrc
 .venv
