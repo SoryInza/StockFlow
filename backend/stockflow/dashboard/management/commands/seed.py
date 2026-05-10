@@ -83,7 +83,7 @@ class Command(BaseCommand):
 
             produit = Produit.objects.create(
 
-                sku=f'SKU-{1000+i}',
+                sku=f'INZ-{1000+i}',
 
                 nom=fake.word().capitalize(),
 
