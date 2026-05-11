@@ -173,3 +173,60 @@ input{
 
     padding:10px;
 }
+
+.details-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+}
+
+.close-btn{
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    color:red;
+}
+
+.details-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+}
+
+.detail-item{
+
+    padding:12px;
+
+    background:#f1f5f9;
+
+    border-radius:10px;
+}
+
+.detail-label{
+
+    font-weight:bold;
+
+    color:#0f172a;
+}
+
+.produit-row{
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.produit-row:hover{
+
+    background:#f8fafc;
+}

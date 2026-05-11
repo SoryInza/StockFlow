@@ -111,7 +111,8 @@ function afficherProduits(produits){
 
         table.innerHTML += `
 
-            <tr>
+            <tr onclick="voirProduit(${produit.id})"
+    class="produit-row">
 
                 <td>
                     ${produit.nom}
@@ -260,6 +261,120 @@ async function supprimerProduit(id){
     chargerProduits()
 }
 
+async function voirProduit(id){
+
+    const response = await fetch(
+
+        `http://127.0.0.1:8000/api/produits/${id}`
+    )
+
+    const produit = await response.json()
+
+    document.getElementById(
+        'detailsContent'
+    ).innerHTML = `
+
+        <div class="detail-item">
+
+            <span class="detail-label">
+
+                Nom :
+
+            </span>
+
+            ${produit.nom}
+
+        </div>
+
+        <div class="detail-item">
+
+            <span class="detail-label">
+
+                SKU :
+
+            </span>
+
+            ${produit.sku}
+
+        </div>
+
+        <div class="detail-item">
+
+            <span class="detail-label">
+
+                Catégorie :
+
+            </span>
+
+            ${produit.categorie}
+
+        </div>
+
+        <div class="detail-item">
+
+            <span class="detail-label">
+
+                Prix :
+
+            </span>
+
+            ${produit.prix_unitaire} FCFA
+
+        </div>
+
+        <div class="detail-item">
+
+            <span class="detail-label">
+
+                Stock :
+
+            </span>
+
+            ${produit.quantite_stock}
+
+        </div>
+
+        <div class="detail-item">
+
+            <span class="detail-label">
+
+                Seuil :
+
+            </span>
+
+            ${produit.seuil_alerte}
+
+        </div>
+
+        <div class="detail-item">
+
+            <span class="detail-label">
+
+                Statut :
+
+            </span>
+
+            ${
+
+                produit.en_alerte
+
+                ?
+
+                '⚠️ En alerte'
+
+                :
+
+                '✅ OK'
+            }
+
+        </div>
+    `
+
+    document.getElementById(
+        'detailsModal'
+    ).style.display = 'flex'
+}
+
 produitForm.addEventListener(
     'submit',
 
@@ -348,3 +463,17 @@ statutFilter.addEventListener(
 )
 
 chargerProduits()
+
+document.getElementById(
+    'closeDetailsModal'
+).addEventListener(
+
+    'click',
+
+    () => {
+
+        document.getElementById(
+            'detailsModal'
+        ).style.display = 'none'
+    }
+)

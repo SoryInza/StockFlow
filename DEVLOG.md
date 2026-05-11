@@ -1,7 +1,5 @@
 # DEVLOG — STOCKFLOW
 
----
-
 # Samedi — Matin
 
 Heure :
@@ -29,25 +27,11 @@ Heure :
   - Boutique
   - Produit
 
-## Problème rencontré
+## Problème rencontré: Erreur lors des migrations (No module named rest_framework)
 
-Erreur lors des migrations :
+## Solution:Installation du package manquant :pip install djangorestframework
 
-```txt
-No module named rest_framework
-```
-
-## Solution
-
-Installation du package manquant :
-
-```bash
-pip install djangorestframework
-```
-
-## Choix technique
-
-Choix de Django REST Framework pour accélérer la création des APIs REST et structurer proprement le backend.
+## Choix technique: Choix de Django REST Framework pour accélérer la création des APIs REST et structurer proprement le backend.
 
 ---
 
