@@ -10,7 +10,7 @@ async function chargerStatistiques(){
 
     const response = await fetch(
 
-        `${API}/statistiques?boutique_id=1`
+        `${API}/statistiques?boutique_id=57`
     )
 
     const data = await response.json()
