@@ -60,8 +60,11 @@ SQLite
         python manage.py runserver
         Le serveur démarre sur :
 
-        Copier le code
+        Copier le code d'accès au backend
         http://127.0.0.1:8000
+  - Lancer le fontend(ouvrir ce fichier dans le navigateur.)
+    
+        frontend/dashboard.html
 
 4. Documentation des endpoints
 
