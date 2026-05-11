@@ -34,7 +34,8 @@ class Command(BaseCommand):
             'Boissons',
             'Hygiène',
             'Électronique',
-            'Maison'
+            'Maison',
+            'Cosmetique'
         ]
 
         fournisseurs = [

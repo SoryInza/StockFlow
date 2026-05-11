@@ -111,7 +111,7 @@ function afficherProduits(produits){
 
         table.innerHTML += `
 
-            <tr onclick="voirProduit(${produit.id})"
+            <tr 
     class="produit-row">
 
                 <td>
@@ -187,6 +187,14 @@ function afficherProduits(produits){
                             )">
 
                             Supprimer
+
+                        </button>
+
+                        <button
+                            class="consult-btn"
+                            onclick="voirProduit(${produit.id})">
+
+                            Voir
 
                         </button>
 
@@ -435,14 +443,19 @@ produitForm.addEventListener(
             }
         )
 
+        const result =
+        await response.json()
+
         if(response.status === 400){
 
             alert(
-                "Veuillez vérifier les donnés du formulaire, peut etre le SKU qui doit commencer par les trois premiere lettre de votre prénom!"
+
+                JSON.stringify(result.sku[0])
             )
 
             return
         }
+
 
         modal.style.display = "none"
 

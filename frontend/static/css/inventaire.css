@@ -134,6 +134,12 @@ table tr{
     background:red;
 }
 
+.consult-btn{
+
+    background:green;
+}
+
+
 .modal{
 
     position:fixed;
